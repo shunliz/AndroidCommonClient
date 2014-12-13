@@ -4,7 +4,7 @@ AndroidCommonClient
 A Common Android Client, common feature aggregate, plan to develop to a generic framework.
 
 1. <a href="http://actionbarsherlock.com/usage.html">actionbarsherlock</a>---An actionbar library used by XUE8
-2. library--- The sliding menu libray used by XUE8
+2. <a href="https://github.com/jfeinstein10/SlidingMenu">library</a>--- The sliding menu libray used by XUE8
 3. XUE8--- The common client code base
 
 The common client.
