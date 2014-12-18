@@ -14,4 +14,5 @@ The common client.
 4. PagerView support.
 5. App Self upgrade support.
 6. Actionbarsherlock support.
+7. Pull up refresh and pull down get more
 
