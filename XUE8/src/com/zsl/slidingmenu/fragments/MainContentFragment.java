@@ -1,4 +1,4 @@
-package com.zsl.slidingmenu.fragments;
+ï»¿package com.zsl.slidingmenu.fragments;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
@@ -32,6 +33,7 @@ public class MainContentFragment extends Fragment  implements OnRefreshListener,
 	private ViewFlipper viewFlipper = null;
 	
 	private AutoListView lstv;
+	private ListView lst;
 	private ListViewAdapter adapter;
 	private List<String> list = new ArrayList<String>();
 	private Handler handler = new Handler() {
@@ -130,7 +132,7 @@ public class MainContentFragment extends Fragment  implements OnRefreshListener,
 	}
 	
 	private void loadData(final int what) {
-		// ÕâÀïÄ£Äâ´Ó·þÎñÆ÷»ñÈ¡Êý¾Ý
+		// ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½Ó·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½
 		new Thread(new Runnable() {
 
 			@Override
@@ -148,13 +150,13 @@ public class MainContentFragment extends Fragment  implements OnRefreshListener,
 		}).start();
 	}
 	
-	// ²âÊÔÊý¾Ý
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public List<String> getData() {
 		List<String> result = new ArrayList<String>();
 		Random random = new Random();
 		for (int i = 0; i < 10; i++) {
 			long l = random.nextInt(10000);
-			result.add("µ±Ç°ÌõÄ¿µÄID£º" + l);
+			result.add("item" + l);
 		}
 		return result;
 	}

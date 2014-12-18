@@ -53,8 +53,8 @@
                 android:contentDescription="@string/hello_world" />
         </LinearLayout>
     </ViewFlipper>
-
-    <com.example.autolistview.widget.AutoListView
+    
+    <com.zsl.widget.AutoListView
         android:id="@+id/lstv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
