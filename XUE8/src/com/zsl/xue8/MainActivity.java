@@ -1,13 +1,22 @@
 package com.zsl.xue8;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
+import com.zsl.adapter.ListViewAdapter;
 import com.zsl.slidingmenu.fragments.MainPagerContentFragment;
 import com.zsl.slidingmenu.fragments.PersonMenuFragment;
+import com.zsl.widget.AutoListView;
+import com.zsl.widget.AutoListView.OnLoadListener;
+import com.zsl.widget.AutoListView.OnRefreshListener;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,7 +26,7 @@ import android.widget.Toast;
 public class MainActivity extends SlidingFragmentActivity {
 
 	private Fragment mContent;
-
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -71,7 +80,6 @@ public class MainActivity extends SlidingFragmentActivity {
 		sm.setShadowDrawable(R.drawable.shadow);
 		sm.setBehindScrollScale(0.25f);
 		sm.setFadeDegree(0.25f);
-
 	}
 
     @Override

@@ -1,4 +1,4 @@
-package com.zsl.xue8;
+ï»¿package com.zsl.xue8;
 
 import com.zsl.services.UpdateService;
 
@@ -49,17 +49,17 @@ public class LoginActivity extends Activity {
 		int localVersion = packageInfo.versionCode;
 		if (localVersion < serverVersion) {
 
-			// ·¢ÏÖÐÂ°æ±¾£¬ÌáÊ¾ÓÃ»§¸üÐÂ
+			// å‘çŽ°æ–°ç‰ˆæœ¬ï¼Œæç¤ºç”¨æˆ·æ›´æ–°
 			AlertDialog.Builder alert = new AlertDialog.Builder(this);
-			alert.setTitle("Èí¼þÉý¼¶")
-					.setMessage("·¢ÏÖÐÂ°æ±¾,½¨ÒéÁ¢¼´¸üÐÂÊ¹ÓÃ.")
-					.setPositiveButton("¸üÐÂ",
+			alert.setTitle("è½¯ä»¶å‡çº§")
+					.setMessage("å‘çŽ°æ–°ç‰ˆæœ¬,å»ºè®®ç«‹å³æ›´æ–°ä½¿ç”¨.")
+					.setPositiveButton("æ›´æ–°",
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 										int which) {
-									// ¿ªÆô¸üÐÂ·þÎñUpdateService
-									// ÕâÀïÎªÁË°Ñupdate¸üºÃÄ£¿é»¯£¬¿ÉÒÔ´«Ò»Ð©updateServiceÒÀÀµµÄÖµ
-									// Èç²¼¾ÖID£¬×ÊÔ´ID£¬¶¯Ì¬»ñÈ¡µÄ±êÌâ,ÕâÀïÒÔapp_nameÎªÀý
+									// å¼€å¯æ›´æ–°æœåŠ¡UpdateService
+									// è¿™é‡Œä¸ºäº†æŠŠupdateæ›´å¥½æ¨¡å—åŒ–ï¼Œå¯ä»¥ä¼ ä¸€äº›updateServiceä¾èµ–çš„å€¼
+									// å¦‚å¸ƒå±€IDï¼Œèµ„æºIDï¼ŒåŠ¨æ€èŽ·å–çš„æ ‡é¢˜,è¿™é‡Œä»¥app_nameä¸ºä¾‹
 									Intent updateIntent = new Intent(
 											LoginActivity.this,
 											UpdateService.class);
@@ -70,7 +70,7 @@ public class LoginActivity extends Activity {
 									startService(updateIntent);
 								}
 							})
-					.setNegativeButton("È¡Ïû",
+					.setNegativeButton("å–æ¶ˆ",
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 										int which) {
@@ -94,9 +94,9 @@ public class LoginActivity extends Activity {
 		}
 
 		if (netSataus == false) {
-			Builder b = new AlertDialog.Builder(this).setTitle("Ã»ÓÐ¿ÉÓÃµÄÍøÂç")
-					.setMessage("Çë¿ªÆôGPRS»òWIFIÍøÂçÁ¬½Ó");
-			b.setPositiveButton("È·ÈÏ", new DialogInterface.OnClickListener() {
+			Builder b = new AlertDialog.Builder(this).setTitle("æ²¡æœ‰å¯ç”¨çš„ç½‘ç»œ")
+					.setMessage("è¯·å¼€å¯GPRSæˆ–WIFIç½‘ç»œè¿žæŽ¥");
+			b.setPositiveButton("ç¡®è®¤", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int whichButton) {
 					Intent mIntent = new Intent("/");
 					ComponentName comp = new ComponentName(
@@ -104,9 +104,9 @@ public class LoginActivity extends Activity {
 							"com.android.settings.WirelessSettings");
 					mIntent.setComponent(comp);
 					mIntent.setAction("android.intent.action.VIEW");
-					startActivityForResult(mIntent, 0); // Èç¹ûÔÚÉèÖÃÍê³ÉºóÐèÒªÔÙ´Î½øÐÐ²Ù×÷£¬¿ÉÒÔÖØÐ´²Ù×÷´úÂë£¬ÔÚÕâÀï²»ÔÙÖØÐ´
+					startActivityForResult(mIntent, 0); // å¦‚æžœåœ¨è®¾ç½®å®ŒæˆåŽéœ€è¦å†æ¬¡è¿›è¡Œæ“ä½œï¼Œå¯ä»¥é‡å†™æ“ä½œä»£ç ï¼Œåœ¨è¿™é‡Œä¸å†é‡å†™
 				}
-			}).setNeutralButton("È¡Ïû", new DialogInterface.OnClickListener() {
+			}).setNeutralButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int whichButton) {
 					dialog.cancel();
 				}

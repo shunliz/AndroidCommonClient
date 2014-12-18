@@ -1,8 +1,9 @@
-.git
-gen
-bin
-gen/
-bin/
 .settings
+actionbarsherlock/bin
+actionbarsherlock/gen
+library/bin
+library/gen
+XUE8/bin
+XUE8/gen
+.git
 
-*R.*

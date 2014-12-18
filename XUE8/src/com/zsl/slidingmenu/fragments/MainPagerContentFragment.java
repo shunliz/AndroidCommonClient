@@ -3,12 +3,15 @@ package com.zsl.slidingmenu.fragments;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.zsl.adapter.ListViewAdapter;
 import com.zsl.entity.ContentBean;
+import com.zsl.widget.AutoListView;
 import com.zsl.xue8.MainActivity;
 import com.zsl.xue8.R;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -25,8 +28,8 @@ public class MainPagerContentFragment extends Fragment {
 	private int mImgRes;
 	
 	private ViewPager mViewPager;
-	private static final String[] titles = {"One","Two","Three","Four","Five"};
-	private List<ContentBean> list = new ArrayList<ContentBean>();
+	private static final String[] titles = {"Students","Teachers","Courses","Problems","Friends"};
+	private List<ContentBean> pagelist = new ArrayList<ContentBean>();
 	private ContentFragmentPagerAdapter mAdapter;
 	
 	public MainPagerContentFragment() { }
@@ -55,7 +58,7 @@ public class MainPagerContentFragment extends Fragment {
 				new Handler().postDelayed(new Runnable() {
 					@Override
 					public void run() {
-						mAdapter = new ContentFragmentPagerAdapter(getActivity().getSupportFragmentManager(),list);
+						mAdapter = new ContentFragmentPagerAdapter(getActivity().getSupportFragmentManager(),pagelist);
 						mViewPager.setAdapter(mAdapter);
 					}
 				}, 100);
@@ -100,7 +103,7 @@ public class MainPagerContentFragment extends Fragment {
 			cb.setTitle(titles[i]);
 			cb.setContent(titles[i]+"_"+(i+1));
 			
-			list.add(cb);
+			pagelist.add(cb);
 		}
 	}
 	
