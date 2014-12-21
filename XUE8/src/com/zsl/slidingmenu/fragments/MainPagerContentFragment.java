@@ -6,9 +6,12 @@ import java.util.List;
 import com.zsl.adapter.ListViewAdapter;
 import com.zsl.entity.ContentBean;
 import com.zsl.widget.AutoListView;
+import com.zsl.xue8.LoginActivity;
 import com.zsl.xue8.MainActivity;
 import com.zsl.xue8.R;
+import com.zsl.xue8.TestSensorActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -47,6 +50,9 @@ public class MainPagerContentFragment extends Fragment {
 		switch (mPos) {
 		    //left menu index
 			case 1:
+				Intent intent = new Intent();
+				intent.setClass(getActivity(), TestSensorActivity.class);
+				getActivity().startActivity(intent);
 			case 2:
 			case 3:
 			default:

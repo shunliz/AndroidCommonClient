@@ -1,9 +1,14 @@
 package com.zsl.widget;
 
+import com.zsl.services.UpdateService;
 import com.zsl.utils.Utils;
+import com.zsl.xue8.LoginActivity;
 import com.zsl.xue8.R;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -12,6 +17,7 @@ import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -73,7 +79,7 @@ public class AutoListView extends ListView implements OnScrollListener {
 
 	private OnRefreshListener onRefreshListener;
 	private OnLoadListener onLoadListener;
-
+	
 	public AutoListView(Context context) {
 		super(context);
 		initView(context);
@@ -121,6 +127,32 @@ public class AutoListView extends ListView implements OnScrollListener {
 	// 初始化组件
 	private void initView(Context context) {
 
+		this.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				//start a new activity to show person details
+				AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
+				alert.setTitle("details here")
+						.setMessage("person details page")
+						.setPositiveButton("ok",
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog,
+											int which) {
+									}
+								})
+						.setNegativeButton("cancel",
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog,
+											int which) {
+										dialog.dismiss();
+									}
+								});
+				alert.create().show();
+			}
+		});
 		// 设置箭头特效
 		animation = new RotateAnimation(0, -180,
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f,
